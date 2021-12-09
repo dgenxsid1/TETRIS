@@ -38,8 +38,6 @@ void gotoxy(int x,int y)                                                // gotox
  SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coord);
  }
 
- 
-
  int piece[4][4]= 
  {
  	{0, 0, 0, 0},
@@ -49,18 +47,11 @@ void gotoxy(int x,int y)                                                // gotox
  };
 
  int stage[31][20]={};                  
-
 int field[31][20]={};
-
-
 int x = 8, y = 0;                                               // coordinate
-
 bool gameover = false;                                          // check whether game is over or not
-
 long long int GAMESPEED ;                               // determines game speed
-
 int score = 0,old_score=0;                                      // calculate score
-
 int high_score = 0;                                      // to maintain high score
 
 
@@ -119,9 +110,7 @@ void gameLoop()                                                         // gameL
 {
 	
     int time = 0;
-
-    initGame(); 
-                                                            // initializes game
+    initGame();                                                    // initializes game
     while(!gameover)                                // check whether game is over or not
     {
         if (kbhit())   
@@ -183,21 +172,9 @@ void gameLoop()                                                         // gameL
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 void initGame()
 {
-	                                                       
-
+	                                       
     for(int i=0;i<=30;i++)                                              
     {
         for(int j=0;j<=19;j++)                                         
@@ -207,17 +184,12 @@ void initGame()
 
             stage[i][j]=field[i][j];
 
-
         }
     }
 
     makepieces();                                                       // calls makespieces function
     display();                                                          // calls display function
 }
-
-
-
-
 
 
 void spawnpiece()                                                       
@@ -467,24 +439,12 @@ void speed()                                                            // speed
 }
 
 
-void level()
-{
-	
-}
-
 int main()
 {
-
-
 	title();  
 	                                                      // calls title function
-
     gameLoop();                                                     // calls gameLoop function
     
-
     return 0;
-	
-
-
 	
 }
